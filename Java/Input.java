@@ -1,9 +1,18 @@
 package Java;
-import java.util.Scanner;
-public class Input {
+class ReverseWordsInString {
+    public String reverseWords(String s) {
+        String[] words = s.split(" ");
+        StringBuilder sb = new StringBuilder();
+        for (int i = words.length - 1; i >= 0; i--) {
+            if (words[i].length() > 0) {
+                sb.append(words[i]);
+                sb.append(" ");
+            }
+        }
+        return sb.toString().trim();
+    }
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        for(int i=1; sc.hasNext()==true; i++)
-            System.out.println(i+" "+sc.nextLine());
-    } 
+        ReverseWordsInString r = new ReverseWordsInString();
+        System.out.println(r.reverseWords("Hii Harsh... How are you? You can insert as many spaces you want in this string. Trim function will remove the extra spaces."));
+    }
 }
