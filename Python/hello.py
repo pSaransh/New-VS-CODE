@@ -20,3 +20,4 @@ k=2
 items=getNums(n,k)
 for i in items:
     print(i,end=" ")
+    
