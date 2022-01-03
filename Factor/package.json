@@ -1,0 +1,16 @@
+{
+  "name": "factor",
+  "version": "1.0.0",
+  "description": "Print factor of a number",
+  "main": "index.js",
+  "preferGlobal": true,
+  "bin": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ramansh Pathak",
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^8.3.0"
+  }
+}
