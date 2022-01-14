@@ -17,5 +17,7 @@ public class HelloJava {
             {
                 s3=s3+s1.charAt(i);
             }
-        }   
+        }
+        return s3;
+    }   
 }

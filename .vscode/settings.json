@@ -13,5 +13,6 @@
             "database": "sys",
             "username": "root"
         }
-    ]
+    ],
+    "files.autoSave": "afterDelay"
 }

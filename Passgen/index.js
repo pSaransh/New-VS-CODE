@@ -33,3 +33,4 @@ clipboardy.writeSync(generatedPassword)
 // output password generated
 log(chalk.blue('Generated Password: ')+ (generatedPassword))
 log(chalk.yellow('Password Copied to Clipboard'))
+ 

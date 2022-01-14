@@ -1,23 +1,12 @@
-def isValid(n,k):
-    nCopy=n
-    while n>0:
-        rem = n%10
-        if(rem!=4 and rem!=5 and rem!=6):
-            return False
-        n=n//10
-    if(nCopy%k==0):
-        return True
-    else:
-        return False
-def getNums(n,k):
-    l=[]
-    for i in range(1,n+1):
-        if isValid(i,k):
-            l.append(i)
-    return l
-n=100
-k=2
-items=getNums(n,k)
-for i in items:
-    print(i,end=" ")
-    
+list1=["mark","eminem","john","logan"]
+def frn(x):
+    i=0
+    list3 = []
+    while(i<=3):
+        if len(x[i])<5:
+            app=x.pop(i)
+            list3.append(app)
+        i+=1
+    return list3
+result = frn(list1)
+print(result)
