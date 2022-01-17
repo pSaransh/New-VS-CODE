@@ -8,5 +8,6 @@ int main(void){
 		cout << "Nice Normy <3.";
 	else
 		cout << "You seem a little bit odd to me.";
+	cin >>n; 
 	return 0;
 }
