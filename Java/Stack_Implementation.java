@@ -1,5 +1,5 @@
 package Java;
-import java.util.*;
+//import java.util.*;
 class Node{
     int data;
     Node next;   
@@ -11,10 +11,6 @@ class Stack{
     }
     public void push(int data){
         Node node = new Node();
-        if(node==null){
-            System.out.println("Heap Overflow.");
-            return;
-        }
         node.data = data;
         node.next=top;
         top = node;
