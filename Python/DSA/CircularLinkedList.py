@@ -6,7 +6,7 @@ class Node:
         self.next=None
 
 class CircularLinkedList:
-    def __init__(self)->None:
+    def __init__(self)->None: 
         self.head = None
         
     def append(self,val,pos=None):
