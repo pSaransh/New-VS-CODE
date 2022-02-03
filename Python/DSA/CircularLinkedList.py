@@ -37,7 +37,8 @@ class CircularLinkedList:
             point1.next = newNode
             newNode.next = self.head
         return self.head
-    
+    def reverse_print(self):
+        
     def pop(self,pos=None):
         point1 = self.head
         if pos==0:

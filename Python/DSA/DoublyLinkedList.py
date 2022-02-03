@@ -60,8 +60,10 @@ class DoublyLinkedLst:
     def getHead(self):
         return self.head
     def getTail(self):
-        point1 = Node()
         point1 = self.head
+        while point1.next is not None:
+            point1 = point1.next
+        return point1
         
     def lookup(self,key):
         point1 = self.head
@@ -110,7 +112,12 @@ class DoublyLinkedLst:
             slow = slow.next
             fast = fast.next.next
         return slow
-
+    def printReverse(self):
+        point1 = self.getTail()
+        while point1 is not self.head:
+            print(point1.data)
+            point1 = point1.prev
+        print()
     def traverse(self) -> None:
         point1 = self.head
         while point1 is not None:
@@ -120,17 +127,13 @@ class DoublyLinkedLst:
 
 def main():
     ll1 = DoublyLinkedLst()
-    items = [True,12,'H',"Python",20.98,['i',4,Node(10)]]
-    for i in items:
+    #items = ["I'm first",12,'H',"Python",20.98,"I'm last"]
+    for i in range(1,11):
         ll1.append(i)
-    ll1.traverse()
-    ll1.pop()
-    ll1.traverse()
-    ll1.append(110,5)
-    ll1.traverse()
-    t = ll1.lookup(int(input()))
-    if t[0]:
-        print('Found at:',t[1],'❤️')
-    else: print('😒')
+    ll2 = ll1.getHead()
+    print(ll2.data)
+    ll2 = ll1.getTail()
+    print(ll2.data)
+    ll1.printReverse()
 
 main()
