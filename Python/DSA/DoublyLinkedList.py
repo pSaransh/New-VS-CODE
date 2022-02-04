@@ -4,7 +4,7 @@ class Node:
         self.next=None
         self.prev = None
 
-class DoublyLinkedLst:
+class DoublyLinkedList:
     def __init__(self)->None:
         self.head = None
     
@@ -57,15 +57,15 @@ class DoublyLinkedLst:
             point2.next=None
         return self.head
 
-    def getHead(self):
+    def getHead(self) -> Node:
         return self.head
-    def getTail(self):
+    def getTail(self) -> Node:
         point1 = self.head
         while point1.next is not None:
             point1 = point1.next
         return point1
         
-    def lookup(self,key):
+    def lookup(self,key) -> tuple:
         point1 = self.head
         counter = 0
         while point1 is not None:
@@ -103,7 +103,7 @@ class DoublyLinkedLst:
         sortedlist = self.sortedMerge(left, right)
         return sortedlist
 
-    def getMiddle(self, head):
+    def getMiddle(self, head) -> Node:
         if (head is None):
             return head
         slow = head
@@ -112,12 +112,48 @@ class DoublyLinkedLst:
             slow = slow.next
             fast = fast.next.next
         return slow
+    
+    def isPalindrome(self) -> bool:
+        current = self.head
+        point1 = self.getTail()
+        values1 = ""
+        while current is not None:
+            values1+=str(current.data)
+            current = current.next
+        point1 = self.getTail()
+        values2 = ""
+        while point1 is not self.head:
+            values2+=str(point1.data)
+            point1 = point1.prev
+        values2+=str(point1.data)
+        return values1==values2
+
     def printReverse(self):
         point1 = self.getTail()
         while point1 is not self.head:
             print(point1.data)
             point1 = point1.prev
         print()
+    
+    def merge(self,ll2):
+        ll3 = DoublyLinkedList()
+        selfLLHead = self.head
+        secondLLHead = ll2.head
+        while (selfLLHead is not None) and (secondLLHead is not None):
+            if selfLLHead.data <= secondLLHead.data:
+                ll3.append(selfLLHead.data)
+                selfLLHead = selfLLHead.next
+            else:
+                ll3.append(secondLLHead.data)
+                secondLLHead = secondLLHead.next
+        while selfLLHead is not None:
+            ll3.append(selfLLHead.data)
+            selfLLHead = selfLLHead.next
+        while secondLLHead is not None:
+            ll3.append(secondLLHead.data)
+            secondLLHead = secondLLHead.next
+        return ll3
+
     def traverse(self) -> None:
         point1 = self.head
         while point1 is not None:
@@ -126,14 +162,11 @@ class DoublyLinkedLst:
         print()
 
 def main():
-    ll1 = DoublyLinkedLst()
-    #items = ["I'm first",12,'H',"Python",20.98,"I'm last"]
-    for i in range(1,11):
-        ll1.append(i)
-    ll2 = ll1.getHead()
-    print(ll2.data)
-    ll2 = ll1.getTail()
-    print(ll2.data)
-    ll1.printReverse()
+    dll1 = DoublyLinkedList()
+    dll1.append(1)    
+    dll1.append(2)    
+    dll1.append(2)    
+    dll1.append(1)
+    print(dll1.isPalindrome())    
 
 main()

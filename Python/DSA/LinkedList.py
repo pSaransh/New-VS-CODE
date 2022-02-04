@@ -11,7 +11,7 @@ class LinkedList:
     3.Lookup
     4.SortList
     5.Palindrome Checker
-    6. Reverse Linked List
+    6.Reverse Linked List
     7.Simple Merge(Unsorted)
     8.Merge(Sorted)
     9.Get Head

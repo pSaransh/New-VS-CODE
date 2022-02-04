@@ -1,9 +1,15 @@
 package Java;
-//import java.util.*;
+import java.util.*;
 public class Solution {
     
     public static void main(String[] args) {
-        System.out.println(new Solution().newCondition(1000,2));
+        ArrayList<Integer> newList = new ArrayList<Integer>();
+        for(int i=1 ; i<=10 ; i++)
+            newList.add(i);
+        StringBuffer newString = new StringBuffer();
+        for(int i:newList)
+            newString.append(i);
+        System.out.println(newString.toString());
     }
     int newCondition(int n,int k){
         int count=0;
