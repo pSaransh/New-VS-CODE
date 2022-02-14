@@ -6,7 +6,7 @@ public class HelloJava {
 
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
-               sc.close();
+        sc.close();
     }
     static String angrams(String s1,String s2)
     {

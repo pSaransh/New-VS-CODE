@@ -12,7 +12,17 @@ class ReverseWordsInString {
         return sb.toString().trim();
     }
     public static void main(String[] args) {
-        ReverseWordsInString r = new ReverseWordsInString();
-        System.out.println(r.reverseWords("Hii Harsh... How are you? You can insert as many spaces you want in this string. Trim function will remove the extra spaces."));
+        int[] arr = {9,5,2,1,4,3};
+	int max = 0;
+	for(int i=0; i < arr.length; i++)
+			if(max < arr[i])
+				max = arr[i];
+	int maxOR = 0;
+	for(int i=0; i < arr.length; i++)
+		if(maxOR < (max^arr[i]))
+			maxOR = max^arr[i];
+
+				
+	System.out.println("Maximum XOR: " + maxOR);
     }
 }

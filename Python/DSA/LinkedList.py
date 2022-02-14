@@ -1,9 +1,5 @@
-class Node:
-    '''Structure : DATA | NEXT'''
-    def __init__(self,data=None):
-        self.data = data
-        self.next=None
-
+from Node import Node
+from MergeLL import mergeList
 class LinkedList:
     '''Linked List class have following functions for Linked List:
     1.Append
@@ -50,10 +46,19 @@ class LinkedList:
             point1.next = newNode
         return self.head
 
-    def pop(self,pos=None):
+    def pop(self,pos=None,val=None):
         point1 = self.head
+        global_pos = 0
         if pos==0:
             self.head = self.head.next
+        elif val is not None:
+            point2 = Node()
+            while point1.next is not None:
+                if point1.data == val:
+                    point2.next = point1.next
+                    return
+                point2 =  point1
+                point1 = point1.next
         elif pos is not None and pos!=0:
             point2 = Node()
             posChecker = 0
@@ -181,6 +186,13 @@ class LinkedList:
             ll3.append(secondLLHead.data)
             secondLLHead = secondLLHead.next
         return ll3
+
+    def removeDuplicatesInSortedLL(self):
+        current = self.head
+        while current.next is not None:
+            if current.data == current.next.data:
+                self.pop(None,current.data)
+            current = current.next
     def traverse(self) -> None:
         point1 = self.head
         while point1 is not None:
@@ -190,26 +202,16 @@ class LinkedList:
 
 def main():
     ll1 = LinkedList()
-    help(LinkedList)
-    ll2 = LinkedList()
-    items = [2,4,6]
-
+    items = []
+    for i in range(1,11): items.append(ri(1,11))
+    items.sort()
+    print(items)
     for i in items:
         ll1.append(i)
-        ll2.append(i-1)
-    s = input()
-    # ll1.traverse()
-    # ll2.traverse()
-    # ll3 = ll1.merge(ll2)
-    # ll3.traverse()
-    # ll1.pop()
-    # ll1.traverse()
-    # ll1.append(110,5)
-    # ll1.sortList()
-    # ll1.traverse()
-    # t = ll1.lookup(int(input()))
-    # if t[0]:
-    #     print('Found at:',t[1],'❤️')
-    # else: print('😒')
-
+    ll1.removeDuplicatesInSortedLL()
+    #ll1.pop(None,2)
+    ll1.traverse()
+    #ll1.pop(None,5)
+    #ll1.traverse()
+from random import randint as ri
 main()
