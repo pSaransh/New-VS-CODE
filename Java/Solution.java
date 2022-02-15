@@ -7,34 +7,35 @@ class Solution{
 	public static void main(String[] args)
     {
         //input
-        Scanner sc = new Scanner(System.in);
-        String instr1 = sc.next();
-        String instr2 = sc.next();
-        String fake_innum = sc.next();
-        int innum = Integer.parseInt(fake_innum);
-        sc.close();
-        //building logic
-        System.out.println(someFunction(instr1,instr2,innum));   
+        String[] stringArr = {"flower","fling","flush"};
+        System.out.println(new Solution().someFunctionThatWillDoShit(stringArr));
+
     }
-    public static String someFunction(String instr1, String instr2, int innum)
+    // boolean startsWith(String compareWith, String comparingWithThis)
+    // {
+    //     if(compareWith.startsWith(comparingWithThis))
+    //         return true;
+    //     return false;
+    // }
+    void compareTwoStrings(String firstString, String secondString)
     {
-        StringBuffer sb1 = new StringBuffer(instr1);
-        StringBuffer sb2 = new StringBuffer(instr2);
+        
+    }
+    String someFunctionThatWillDoShit(String[] stringArr)
+    {
+        StringBuffer sb1 = new StringBuffer(stringArr[0]);
+        StringBuffer sb2 = new StringBuffer(stringArr[1]);
+        int lessLen = sb1.length()<sb2.length()?sb1.length():sb2.length();
         StringBuffer output = new StringBuffer();
-        if(innum>instr1.length()||innum>instr2.length())
+        for(int i=0; i < lessLen; i++)
         {
-            output.append(sb1);
-            output.append(sb2);
-            return output.toString();
+            if(sb1.charAt(i)==sb2.charAt(i))
+                output.append(sb1.charAt(i));
         }
-        else
+        String commonSequence = output.toString();
+        for(int i=2; i<stringArr.length; i++)
         {
-            for(int i=0; i<instr1.length() || i<instr2.length(); i++)
-            {
-                if(i+innum<instr1.length() || i+innum<instr2.length())
-                output.append(instr1.substring(i, i+innum));
-                output.append(instr2.substring(i, i+innum));
-            }
+            compareTwoStrings(stringArr[i],commonSequence);
         }
         return output.toString();
     }
