@@ -66,18 +66,8 @@ class Stack:
         while current.next is not None:
             current = current.next
         current.next = stack2.top
+        # return self.top
 
-def stack_function(in_stack):
-    temp_stack = Stack()
-    temp_stack.push(5)
-    while(in_stack.top is not None):
-        temp_stack.push(in_stack.pop()*in_stack.pop())
-        temp_stack.push(8)
-        temp_stack.push(temp_stack.pop()+in_stack.pop())
-    
-    while(temp_stack.top is not None):
-        in_stack.push(temp_stack.pop())
-    return in_stack
 in_stack = Stack()
 in_stack.push(13)
 in_stack.push(9)
@@ -86,7 +76,10 @@ in_stack.push(5)
 in_stack.push(11)
 in_stack.push(4)
 new_stack = Stack()
-new_stack = stack_function(in_stack)
+new_stack.push(100)
+new_stack.push(200)
+new_stack.push(300)
+in_stack.join(in_stack)
 new_stack.display()
 in_stack.display()
-in_stack
+# in_stack

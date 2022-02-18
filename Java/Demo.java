@@ -1,9 +1,10 @@
 package Java;
-class WT_WAP1 {
+//import Java.DSA_Questions.Node;
+public class Demo{
   public static void main(String[] args) {
-      Float num1 = Float.parseFloat(args[0]);
-      Float num2 = Float.parseFloat(args[1]);
-      Float num3 = Float.parseFloat(args[2]);
-  System.out.println("Sum of three floating point numbers are: "+(num1+num2+num3));
-  }  
+    print2();
+  }
+  static void print2(){
+    System.out.println("Hello World 4.");
+  }
 }
