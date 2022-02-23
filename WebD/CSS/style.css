@@ -1,0 +1,16 @@
+
+body{
+    background-color: rgba(128, 119, 255, 0.404);
+}
+table {
+    border: 5px solid rgb(0, 61, 0);
+    border-collapse: collapse;
+            
+}
+td {
+    border: 3px solid rgb(22, 57, 255);
+    border-collapse:collapse;
+}
+b{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', Verdana, sans-serif;
+}
