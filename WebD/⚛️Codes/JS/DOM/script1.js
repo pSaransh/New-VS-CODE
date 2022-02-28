@@ -80,3 +80,19 @@ button.addEventListener("click",() => {
     courses.sort((a,b)=>parseFloat(a.price) - parseFloat(b.price))  ;
     generateList();
 });
+var newPromise = fetch('https://api.chucknorris.io/jokes/random')
+.then((response) =>{
+    return response.json();
+})
+.then((data) => {
+    return data.value;
+})
+.catch()
+
+const pJoke = document.querySelector(".joke-goes-here");
+const getAnother = document.querySelector(".get-another");
+
+getAnother.addEventListener("click",async() => {
+    let realJoke = await newPromise;
+    pJoke.innerHTML = realJoke;  
+})

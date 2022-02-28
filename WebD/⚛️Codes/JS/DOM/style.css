@@ -55,3 +55,7 @@ body{
     align-items: center;
     min-height: 100vh;
 }
+button.get-another{
+    color: aliceblue;
+    background-color: brown;
+}
