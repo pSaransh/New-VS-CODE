@@ -3,9 +3,610 @@
         {
             "language": "typescript",
             "source": [
-                ""
+                "function mergeArray(array1,array2){\r\n    return [\r\n        ...array1,\r\n        ...array2\r\n    ]\r\n}\r\nfunction arrayFromSet(newSet){\r\n    let newArr = []\r\n    newSet.forEach(element => {\r\n        newArr.push(element)\r\n    });\r\n    return newArr\r\n}\r\nvar array1 = [\r\n    'Samsung',\r\n    'Apple',\r\n    'Google',\r\n    'Microsoft'\r\n]\r\nvar array2 = [\r\n    'Google',\r\n    'Facebook',\r\n    'Instagram',\r\n    'Netflix'\r\n]\r\n//var array = new Set(mergeArray(array1,array2));\r\n//var newArr = arrayFromSet(array);\r\n//console.log(newArr,array);\r\n "
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stderr",
+                            "value": [
+                                "Debugger attached.\r",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "Falsy Values:\r\nundefined\r\nnull\r\n0\r\n''\r\nNaN"
             ],
             "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "//code hoisting\r\nsmallTipper(\"200\")\r\n//smallTipper is a function and functions are scanned and made available globally by global context\r\nfunction smallTipper(bill){\r\n    console.log(parseInt(bill)+5);\r\n}\r\n//bigTipper(\"200\")\r\n//this will give error:\r\n//TypeError : bigTipper is not defined\r\n//here bigTipper is a variable and not a function, also variables are scanned by global context and made undefined\r\n//this is called code hoisting\r\nvar bigTipper = function (bill) {\r\n    console.log(parseInt(bill)+15);  \r\n};\r\nbigTipper(\"200\")\r\n//this is possible but it'll print undefined\r\nconsole.log(r);\r\nvar r = \"Bruno\"\r\n//not possible\r\n//console.log(vars);\r\n//let varsn b = \"Bruno\"\r\n"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "205",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "//console.log(this);\r\n//callback funtions\r\nvar isPrime = (num) =>{\r\n    let count=0;\r\n    for(let i=1;i<=num;i++)\r\n        if(num%i===0) count+=1;\r\n    return count===2;\r\n}\r\n[2,3,5,7,11].every(isPrime);\r\n//real callbackfn\r\n[2,4,6,8,10].every((element)=>(element%2===0));"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "items": [
+                        {
+                            "mime": "text/plain",
+                            "value": [
+                                "\u001b[33mtrue\u001b[39m"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "//fill and filter\r\nvar testArray = [2,3,6,1,5,9,8] ;\r\ntestArray.fill(0); // fill(value,start=0,end=array.length-1)\r\nvar myNumbers = [2,3,6,1,5,9,8] ;\r\nconsole.log(newArray.length);\r\n//filter\r\nvar specialNumbs = myNumbers.filter((e)=>e%2!==0);\r\nconsole.log(specialNumbs);\r\nconsole.log(specialNumbs);"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "7",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stderr",
+                            "value": [
+                                "Debugger ending on ws://127.0.0.1:51772/71cbba64-5e72-478c-8454-3eb773b439a0\r",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "//slice and splice\r\nvar users = ['Ted','Tim','Tom','Tug','Terry','Thomas','Theniero;y']\r\nconsole.log(users.slice(1,3));\r\nconsole.log(users);\r\nusers = ['Ted','Tim','Tom','Tug','Terry','Thomas','Thenieroy'];\r\nconsole.log(users);\r\nconsole.log(users.splice(1,2,'T?'));"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "[ 'Tim', 'Tom' ]",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "var userInfo = {\r\n    firstName: \"Ramansh\",\r\n    lastName: \"Pathak\",\r\n    age: 22,\r\n    googleLoggedIn: true,\r\n    role: 'User',\r\n    loginCount : 1\r\n};\r\nconsole.table(userInfo);\r\n"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "┌────────────────┬───────────┐",
+                                "│    (index)     │  Values   │",
+                                "├────────────────┼───────────┤",
+                                "│   firstName    │ 'Ramansh' │",
+                                "│    lastName    │ 'Pathak'  │",
+                                "│      age       │    22     │",
+                                "│ googleLoggedIn │   true    │",
+                                "│      role      │  'User'   │",
+                                "│   loginCount   │     1     │",
+                                "└────────────────┴───────────┘",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "var userInfoUpdated = {\r\n    firstName: \"Ramansh\",\r\n    lastName: \"Pathak\",\r\n    age: 22,\r\n    googleLoggedIn: true,\r\n    role: 'User',\r\n    loginCount : 1,\r\n    courseList: [],\r\n    addCourse: function(courseName,paymentStatus,loginStatus=this.googleLoggedIn){\r\n        if(paymentStatus&&loginStatus)\r\n            this.courseList.push(courseName)\r\n        else\r\n            console.log('Your Payment was unsuccessful.Sorry!');\r\n    },\r\n    getCourseCount: function () {\r\n        return `${this.firstName} has enrolled in ${this.courseList.length} courses.`\r\n    },\r\n    getRating: function () {\r\n        return this.courseList.length*10;\r\n    },\r\n    getAllInfo: function(){\r\n        console.log(\r\n            `----User Information----\r\n            User Full Name: ${this.firstName} ${this.lastName}\r\n            Age: ${this.age}\r\n            Login Status: ${this.googleLoggedIn}\r\n            User Role: ${this.role}\r\n            User Login Count: ${this.loginCount}\r\n            All Course Enrolled In: ${this.courseList}\r\n            User Rating: ${this.getRating()}`\r\n        );\r\n    },\r\n};\r\nconsole.log(userInfoUpdated.getCourseCount());\r\nuserInfoUpdated.addCourse(\"C++ Bootcamp\",true);\r\nuserInfoUpdated.addCourse(\"React JS Course\",true);\r\nuserInfoUpdated.addCourse(\"Vue 3\",true);\r\nconsole.log(userInfoUpdated.getCourseCount());\r\nuserInfoUpdated.getAllInfo();\r\n"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "Ramansh has enrolled in 0 courses.",
+                                "Ramansh has enrolled in 3 courses.",
+                                "----User Information----",
+                                "            User Full Name: Ramansh Pathak",
+                                "            Age: 22",
+                                "            Login Status: true",
+                                "            User Role: User",
+                                "            User Login Count: 1",
+                                "            All Course Enrolled In: C++ Bootcamp,React JS Course,Vue 3",
+                                "            User Rating: 30",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "//for of loop for arrays\r\nvar states = new Array(\r\n    'Punjab',\r\n    'Goa',\r\n    'Shimla',\r\n    'Kerala',\r\n    'Gujrat',\r\n    'West Bengal',\r\n    'Uttar Pradesh'\r\n);\r\n// for(const s of states)\r\n//     console.log(`State: ${s} ---- Name Length: ${s.length}`);\r\n\r\n//for in loop for objects\r\nvar websiteInitials = {\r\n    yt: \"YouTube\",\r\n    ig: \"Instagram\",\r\n    fb: \"Facebook\",\r\n    lco: \"LearnCodeOnline\",\r\n    gfg: \"Geeks for Geeks\",\r\n}\r\nconsole.log(\"Key:  Value\");\r\nfor(const wI in websiteInitials)\r\n    console.log(`${wI}:   ${websiteInitials[wI]}`); "
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "Key:  Value",
+                                "yt:   YouTube",
+                                "ig:   Instagram",
+                                "fb:   Facebook",
+                                "lco:   LearnCodeOnline",
+                                "gfg:   Geeks for Geeks",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "//lets handle this\r\n// for a regular function call this points to window/global object\r\n// console.log(this); notebook sucks\r\nvar Vehicle = {\r\n    name:\"Car\",\r\n    model:\"Petrol Engine\",\r\n    regNo: \"91X34ER330PE22UP92\",\r\n    getInfo: function () {\r\n        console.log(this);\r\n        // points to object Vehicle because getInfo in not a regualar function\r\n        console.log(`${this.name} ${this.model} ${this.regNo}`);\r\n        function extractCountryCode(){\r\n            console.log(this); // points to global object 'cause it's a regular function\r\n            console.log(`Country Code: 91`);\r\n        }\r\n        extractCountryCode();\r\n    },\r\n}\r\nVehicle.getInfo()"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "{",
+                                "  name: 'Car',",
+                                "  model: 'Petrol Engine',",
+                                "  regNo: '91X34ER330PE22UP92',",
+                                "  getInfo: [Function: getInfo]",
+                                "}",
+                                "Car Petrol Engine 91X34ER330PE22UP92",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "//new keyword\r\n//dynamic objects\r\nvar User = function(firstName,courseCount=0){\r\n    //this is regular function so this will point to window\r\n    //in case of nodejs window=undefined\r\n    this.firstName = firstName;\r\n    this.courseCount = courseCount;\r\n    this.getUserRating = function() {\r\n        console.log(`Your Rating is: ${this.courseCount*10}`);\r\n    };\r\n};\r\nvar user1 = User(\"Ramansh\",2);\r\n//this is pointing to undefined so this will return undefined ☝️\r\nvar user2 = new User(\"Vikram\",3);\r\n//here new keyword will force `this` to stop pointing window object and focus on the object in which it's used\r\nvar user3 = new User(\"Leoy\",6);\r\nconsole.log(user1);\r\nconsole.log(user2);\r\nconsole.log(user3==user2); //return false "
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "undefined",
+                                "User {",
+                                "  firstName: 'Vikram',",
+                                "  courseCount: 3,",
+                                "  getUserRating: [Function (anonymous)]",
+                                "}",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "//__proto__ in Dynamic Objects\r\n//let's add a functionality in User object without touching the main definition\r\nUser.prototype.getCourseCountWithFirstName = function() {\r\n    console.log(`Your First Name is: ${this.firstName} and your course count is: ${this.courseCount}`);\r\n}\r\nuser3 = new User(\"Leoy\",6);\r\nuser3.getCourseCountWithFirstName();\r\n//nearly all objects in JS are instance of `Object` \r\n//each object in JS inherits the property of Object from `Object.prototype`"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "Your First Name is: Leoy and your course count is: 6",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "const Human = {\r\n    //name property for the Human object is not defined but is used \r\n    isHuman: false,\r\n    printIntroduction: function () {\r\n        console.log(`Hello, my name is ${this.name}. Am I Human? ${this.isHuman}.`);\r\n    },   \r\n};\r\nconst me = Object.create(Human);\r\n//name property can be added later and can be used in JS Objects\r\nme.name = 'Mathew';\r\nme.isHuman = true;\r\nme.printIntroduction();\r\n\r\nconst you = new Human();\r\n//TypeError: Human is not a constructor\r\nyou.name = 'Jennifer';\r\nyou.isHuman = false;\r\nyou.printIntroduction()"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "Hello, my name is Mathew. Am I Human? true.",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.error",
+                            "value": {
+                                "name": "TypeError",
+                                "message": "Human is not a constructor",
+                                "stack": "    at <Cell 13> [14, 0]\n    at <Cell 13> [17, 46]\n    at Script.runInContext (node:vm:139:12)\n    at Script.runInNewContext (node:vm:144:17)\n    at Object.runInNewContext (node:vm:298:38)\n    at C (c:\\Users\\asus\\.vscode\\extensions\\donjayamanne.typescript-notebook-2.0.6\\out\\extension\\server\\index.js:2:113345)\n    at t.execCode (c:\\Users\\asus\\.vscode\\extensions\\donjayamanne.typescript-notebook-2.0.6\\out\\extension\\server\\index.js:2:114312)\n    at k.<anonymous> (c:\\Users\\asus\\.vscode\\extensions\\donjayamanne.typescript-notebook-2.0.6\\out\\extension\\server\\index.js:2:142156)\n    at k.emit (node:events:390:28)\n    at k.emit (node:domain:475:12)"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "//IIFE\r\n//Self-Executing Anonymous Functions\r\n(function () {\r\n    console.log(`Hello, this is and IIFE function.`);\r\n    console.log(`You can read more about me on https://developer.mozilla.org/en-US/docs/Glossary/IIFE`);\r\n})();\r\n//Arrow Self-Executing Anonymous Functions\r\n(() => {\r\n    console.log(`This is an Arrow Self-Executing Anonymous Function.`);\r\n})();\r\n//Async Arrow Self-Executing Anonymous Functions\r\n(async () => {\r\n    console.log(`This is an Async Arrow Self-Executing Anonymous Function.`);\r\n})();\r\n//in JS () is called Grouping Operator\r\n//to use variables in IIFE use let"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "Hello, this is and IIFE function.",
+                                "You can read more about me on https://developer.mozilla.org/en-US/docs/Glossary/IIFE",
+                                "This is an Arrow Self-Executing Anonymous Function.",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "const makeWithdraw = (balance) => ((copyBalance) => {\r\n    let balance = copyBalance; // This variable is private\r\n    const doBadThings = () => {\r\n      console.log('I will do bad things with your money');\r\n    };\r\n    doBadThings();\r\n    return {\r\n      withdraw(amount) {\r\n        if (balance >= amount) {\r\n          balance -= amount;\r\n          return balance;\r\n        }\r\n        return 'Insufficient money';\r\n      },\r\n    };\r\n  })(balance);\r\n  /**\r\n   * Two level functioning\r\n   * MakeWithdraw()---------------------------|\r\n   *             |DoBadThings() and Withdraw()|\r\n   *             |____________________________|\r\n   */\r\n  const firstAccount = makeWithdraw(100);   // \"I will do bad things with your money\"\r\n  console.log(firstAccount.balance);        // undefined\r\n  console.log(firstAccount.withdraw(20));   // 80\r\n  console.log(firstAccount.withdraw(30));   // 50\r\n  console.log(firstAccount.doBadThings);    // undefined; this method is private\r\n  const secondAccount = makeWithdraw(20);   // \"I will do bad things with your money\"\r\n  console.log(secondAccount.withdraw(30));  // \"Insufficient money\"\r\n  console.log(secondAccount.withdraw(20));  // 0\r\n  // Also, remember Notebook Sucks\r\n  "
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "I will do bad things with your money",
+                                "undefined",
+                                "80",
+                                "50",
+                                "undefined",
+                                "I will do bad things with your money",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "//closure in JS\r\n//passing functions as refrence not actually calling them\r\nfunction checkedRoom(){\r\n    var isRoomBooked = false;\r\n    if(!isRoomBooked)\r\n    {\r\n        console.log(`Room is free and anyone can book it at reasonable price.`);\r\n    }\r\n    function lastCostumerReview(rate){\r\n        if(this.isRoomBooked)\r\n        {\r\n            console.log(`Room is booked. Can't get review now.`);\r\n        }\r\n        else{\r\n            console.log(`Last Costumer Review is ${rate}`);\r\n        }\r\n    }\r\n    return lastCostumerReview; // <--- returning refrence of the variable this is CLOSURE\r\n}\r\nconst roomService = checkedRoom();\r\n//here roomService is kinda act as function\r\nroomService(5.4);\r\n\r\n/**\r\n   *\r\n   * Level 2     |_---------------------------|\r\n   *             |roomService with refrence of lCR|\r\n   *             |____________________________|\r\n   * Level 1     |----------------------------|\r\n   *             |checkedRoom Stack           |\r\n   *             |____________________________|\r\n   * Level0      |----------------------------|\r\n   *             |Global Context              |\r\n   *             |____________________________|\r\n   */\r\nfunction doAddition(x)\r\n{\r\n    return function (y){\r\n        return x+y;\r\n    }\r\n}\r\nvar add5 = doAddition(5);\r\nfor (let i = 0; i <= 10; i++) {\r\n    console.log(add5(i)); \r\n}\r\n\r\nfor (let i = 0; i < 5; i++) {\r\n    console.log(doAddition(16)(i));\r\n}\r\nconsole.log(`Notebook Sucks`);"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "Room is free and anyone can book it at reasonable price.",
+                                "Last Costumer Review is 5.4",
+                                "5",
+                                "6",
+                                "7",
+                                "8",
+                                "9",
+                                "10",
+                                "11",
+                                "12",
+                                "13",
+                                "14",
+                                "15",
+                                "16",
+                                "17",
+                                "18",
+                                "19",
+                                "20",
+                                "Notebook Sucks",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "//bind \r\n//returns a refrence of a function\r\n//bind is closure\r\nconst aNormalPerson = {\r\n    firstName: \"Daniel\",\r\n    lastName: \"Redcliff\",\r\n    age: 13,\r\n    getInfo: function () {\r\n        console.log(`\r\n        First Name: ${this.firstName}\r\n        Last Name: ${this.lastName}\r\n        Age: ${this.age}\r\n        `);\r\n    }\r\n}\r\naNormalPerson.getInfo();\r\nconst dj = {\r\n    firstName: \"Alan Olav\",\r\n    lastName: \"Walker\",\r\n    age: 24,\r\n}\r\nvar djInfo = aNormalPerson.getInfo.bind(dj);\r\ndjInfo() //<--- call it like this\r\n//or like this\r\n//aNormalPerson.getInfo.bind(dj)();\r\n\r\n//call method calls the function\r\n/**\r\n * call returns getInfo()\r\n * bind returns getInfo\r\n * there's a diffrence b/w getInfo() and getInfo\r\n */\r\naNormalPerson.getInfo.call(dj);"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "",
+                                "        First Name: Daniel",
+                                "        Last Name: Redcliff",
+                                "        Age: 13",
+                                "        ",
+                                "",
+                                "        First Name: Alan Olav",
+                                "        Last Name: Walker",
+                                "        Age: 24",
+                                "        ",
+                                "",
+                                "        First Name: Alan Olav",
+                                "        Last Name: Walker",
+                                "        Age: 24",
+                                "        ",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "\r\nvar firstName = \"Mathew\";\r\nif(typeof firstName==='string'){\r\n    let lastName = 'Perry';\r\n    console.log(`${firstName} ${lastName}`);\r\n}\r\n\r\nif(typeof firstName==='string'){\r\n    var lN = 'Perry';\r\n    console.log(`${firstName} ${lN}`);\r\n}\r\nconsole.log(`${firstName} ${lN}`);\r\nconsole.log(`${firstName} ${lastName}`); //error"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "Mathew Perry",
+                                "Mathew Perry",
+                                "Mathew Perry",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "//map\r\nvar string = new String(\"darix\");\r\nconst stringArr = string.split(\"\");\r\nconsole.log(stringArr);\r\nconst asciiCodes = stringArr.map((e) => e.charCodeAt());\r\nconsole.log(asciiCodes);"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "[ 'd', 'a', 'r', 'i', 'x' ]",
+                                "[ 100, 97, 114, 105, 120 ]",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "//Maps\r\nconst map = new Map();\r\nmap.set(1, \"Uno\");\r\nmap.set(2, \"Duo\");\r\nmap.set(3, \"Tres\");\r\nmap.set(4, \"Cuatros\");\r\nconsole.log(map);\r\n\r\nfor(let [key,value] of map){\r\n    console.log(`Key is ${key} and Value is ${value}.`);\r\n}\r\nmap.forEach((value) => console.log(`Value is: ${value}`));"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "Map(4) { 1 => 'Uno', 2 => 'Duo', 3 => 'Tres', 4 => 'Cuatros' }",
+                                "Key is 1 and Value is Uno.",
+                                "Key is 2 and Value is Duo.",
+                                "Key is 3 and Value is Tres.",
+                                "Key is 4 and Value is Cuatros.",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "//de-structuring\r\nconst userDetails = [\r\n    'hitesh',\r\n    3,\r\n    'admin'\r\n];\r\nvar [userName,courseCount,role] = userDetails;\r\nconsole.log(`\r\nUser Name: ${userName}\r\nCourse Count: ${courseCount}\r\nRole: ${role}\r\n`);\r\nconst usrDtls = {\r\n    userName: 'ramesh',\r\n    courseCount: 7,\r\n    role: 'user',\r\n};\r\nvar {userName,whatIsCourseCount,role} = usrDtls;\r\nconsole.log(`\r\nUser Name: ${userName}\r\nCourse Count: ${whatIsCourseCount} \r\nRole: ${role}\r\n`);\r\n// whatIsCourseCount -> it'll return undefined"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "",
+                                "User Name: hitesh",
+                                "Course Count: 3",
+                                "Role: admin",
+                                "",
+                                "",
+                                "User Name: ramesh",
+                                "Course Count: undefined",
+                                "Role: user",
+                                "",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "//spread and REST operator\r\nvar wholeNumbers = [5,4,1];\r\nfunction addTwo(a,b)\r\n{\r\n    return a+b;\r\n}\r\nconsole.log(addTwo(wholeNumbers));\r\nconsole.log(addTwo(...wholeNumbers)); //spread\r\nvar wholeNumbers = [5,4,1,2,3,5];\r\nvar sum = 0;\r\nfunction newAddTwo(...args) //REST\r\n{\r\n    for (let index = 0; index < args.length; index++) {\r\n        sum += args[index];    \r\n    }\r\n}\r\nconsole.log(newAddTwo(wholeNumbers));"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "5,4,1undefined",
+                                "9",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "//classes and objects\r\nclass Animal {\r\n  //constructor\r\n  constructor(name, metazoaClass) {\r\n    this.name = name;\r\n    this.metazoaClass = metazoaClass;\r\n  }\r\n  //variables\r\n  sound = \"\";\r\n  //methods\r\n  setSound(sound) {\r\n    this.sound = sound;\r\n  }\r\n  getInfo() {\r\n    return {\r\n      name: this.name,\r\n      metazoaClass: this.metazoaClass,\r\n      sound: this.sound,\r\n    };\r\n  }\r\n}\r\nconst bird1 = new Animal(\"Bee Humming Bird\", \"Aves\");\r\n// bird1.sound = \"\"\r\nbird1.setSound(\"Chi Chi\");\r\nconsole.log(bird1.getInfo());\r\n//class with private vars\r\nclass NewsChannel {\r\n    constructor(channelName, channelPrice) {\r\n      this.channelName = channelName;\r\n      this.channelPrice = channelPrice;\r\n    }\r\n    //private vars\r\n    #weeklyTRP = 0;\r\n    #primeTimeAnchor = \"\";\r\n    set weeklyTrp(trp) {\r\n      this.#weeklyTRP = trp;\r\n    }\r\n    set pta(name) {\r\n      this.#primeTimeAnchor = name;\r\n    }\r\n    //getInfo\r\n    get getInfo() {\r\n          return {\r\n              name: this.channelName,\r\n              price: this.channelPrice,\r\n              primeTimeAnchor: this.#primeTimeAnchor,\r\n              trp: this.#weeklyTRP,\r\n          };\r\n    }\r\n  }\r\n  \r\n  //object\r\n  const wion = new NewsChannel(\"WION\",0);\r\n  wion.weeklyTrp= 7.3\r\n  wion.pta= \"Priya Shukla\"\r\n  console.log(wion.getInfo);"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "{ name: 'Bee Humming Bird', metazoaClass: 'Aves', sound: 'Chi Chi' }",
+                                "{ name: 'WION', price: 0, primeTimeAnchor: 'Priya Shukla', trp: 7.3 }",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "//inheritance\r\nclass Employee{\r\n    constructor(empName,empID){\r\n        this.empName = empName;\r\n        this.empID = empID;\r\n    }\r\n    getOfficeAddress(){\r\n        return `5th Centeral Avenue, New York`;\r\n    }\r\n    static privateMethod(){ //child cannot access this and no object is necessary\r\n        return `I am a private method`;\r\n    }\r\n    login(){\r\n        return `Loginned as Employee`\r\n    }\r\n}\r\nclass Manager extends Employee{\r\n    constructor(mngrName,mngrID){\r\n        super(mngrName,mngrID);\r\n    }\r\n    login(){\r\n        return `Loginned as Manager`;\r\n    }\r\n}\r\nconst emp = new Employee('Ramansh','INF9038');\r\nconst mngr = new Manager('Some Fucker','INF6969');\r\nconsole.log('----EMPLOYEE-----');\r\nconsole.log(emp.empID,emp.empName);\r\nconsole.log(emp.getOfficeAddress());\r\nconsole.log(Employee.privateMethod());\r\nconsole.log(emp.login());\r\nconsole.log('-----MANAGER------');\r\nconsole.log(mngr.empID,mngr.empName);\r\nconsole.log(mngr.getOfficeAddress());\r\nconsole.log(mngr.login());"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "----EMPLOYEE-----",
+                                "INF9038 Ramansh",
+                                "5th Centeral Avenue, New York",
+                                "I am a private method",
+                                "Loginned as Employee",
+                                "-----MANAGER------",
+                                "INF6969 Some Fucker",
+                                "5th Centeral Avenue, New York",
+                                "Loginned as Manager",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
         }
     ]
 }
