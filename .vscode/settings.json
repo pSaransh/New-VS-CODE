@@ -14,5 +14,8 @@
             "username": "root"
         }
     ],
-    "files.autoSave": "afterDelay"
+    "files.autoSave": "afterDelay",
+    "files.associations": {
+        "ostream": "cpp"
+    }
 }
