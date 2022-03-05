@@ -1,4 +1,3 @@
-package Java;
 class ReverseWordsInString {
     public String reverseWords(String s) {
         String[] words = s.split(" ");

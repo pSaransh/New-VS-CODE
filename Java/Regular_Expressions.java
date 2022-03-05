@@ -1,5 +1,5 @@
 // String s = "His life was supposed to be simple but there's just one attribute that he's proud of. He was born in Hidden Leaf Village. His parents are shinobi and was killed in Nine-Tail Attack, the day on which a child of prophecy was born-Naruto. With Naruto he also grow up as a father, as a guardian. Although he was just a teacher of Naruto but he meant so much for Naruto. During childhood of Naruto, he always looked up for him and help him to become a better person. He and Ichiraku-Ramen were the only shield that keep Naruto away from all the hate imposed by villagers. He cried when the same people who used to hate Naruto, calles him \"Hero of the Hidden Leaf\", his eyes were filled with tears and there were several flashbacks running through his mind. It matters that Naruto's struggle is important but what's most important that Naruto always have someone on his side. His name is Iruka Umino.";
-package Java;
+
 import java.util.*;
 public class Regular_Expressions {
     public static void main(String[] args) {

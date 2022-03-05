@@ -1,4 +1,3 @@
-package Java;
 public class VarArgs {
     public static void main(String[] args){
         A obj1 = new A();
