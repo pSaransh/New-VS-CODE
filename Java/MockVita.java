@@ -86,7 +86,7 @@ class A{
     ArrayList<Double> m2AtE(){
         double arcLen = getArcLen();
         double time = arcLen/s2;
-        double circumference = 2*pi*r2;
+        //double circumference = 2*pi*r2;
         ArrayList<Double> timestamps = new ArrayList<Double>();
         timestamps.add(time);
         while(time<t){
@@ -98,7 +98,7 @@ class A{
 }
 public class MockVita {
     public static void main(String[] args) {
-        A obj1 = new A();
+        //A obj1 = new A();
         System.out.println(20*Math.toRadians(2*Math.acos(893/920)));
         //obj1.calculateCrash();
     }

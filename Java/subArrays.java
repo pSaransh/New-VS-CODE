@@ -4,14 +4,15 @@ public class subArrays {
     public static void main(String[] args) {
         int[] arr = {1,2,3,4};
         //ArrayList<ArrayList<Integer>> subArrys = new ArrayList<ArrayList<Integer>>();
-        //ArrayList<Integer> subSubs = new ArrayList<Integer>();
+        ArrayList<Integer> subSubs = new ArrayList<Integer>();
         int offset=1;
         for(int i=0; i<arr.length;i++)
         {
             for(int j=i; j<arr.length-offset+1; j++)
             {
                 for(int k=j; k<=j+offset-1; k++)
-                    System.out.print(arr[k]+" ");
+                System.out.print(arr[k]+" ");
+                    subSubs.add(i);
                 System.out.println();
             }
             //offset

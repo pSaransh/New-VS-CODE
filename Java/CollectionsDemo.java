@@ -6,8 +6,7 @@ public class CollectionsDemo {
         int x = sc.nextInt();
         int[] arr = new int[n];
         for (int i = 0; i < arr.length; i++)
-            arr[i] = sc.nextInt();
-        
-        
+            arr[x] = sc.nextInt();
+        sc.close();
     }
 }
