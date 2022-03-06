@@ -4,7 +4,7 @@
   "description": "Simple Password Generator using Command Line",
   "main": "index.js",
   "preferGlobal": true,
-  "bin": "index.js",
+  "bin": "./index.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
