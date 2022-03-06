@@ -1,4 +1,4 @@
-package Java.DSA_Questions;
+package DSA_Questions;
 // import java.util.*;
 public class LinkedList {
     Node headNode;

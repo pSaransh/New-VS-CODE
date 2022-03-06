@@ -1,5 +1,4 @@
-package Java.DSA_Questions;
-
+package DSA_Questions;
 public class Node {
     Integer valInteger;
     String valString;
