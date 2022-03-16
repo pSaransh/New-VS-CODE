@@ -1,0 +1,82 @@
+/* header starts */
+#topHeader{
+ border-bottom: 1px solid #ebebee;
+}
+#topHeader a{
+  font-weight: bold;
+  color: #000000;
+  font-size: 0.89rem; /* 1 rem = 16px;*/
+}
+.container-fluid{
+  padding-left: 0;
+  padding-right: 0;
+}
+nav ul li a {
+  font-weight:700;
+  color: rgb(0, 0, 0);
+}
+nav ul li a:hover {
+  color: rgba(255, 255, 255, 0.76);
+}
+/* header styling ends */
+/* footer starts */
+.fullfooter{
+  background-color: rgb(37, 35, 56);
+}
+.top-footer p{
+  color: white;
+  font-weight: 300;
+}
+.top-footer a{
+  color:rgb(31, 3, 189);
+  font-weight: 900;
+}
+.col-md-3 h3{
+  color: rgb(255, 255, 255);
+}
+.bottom-footer{
+  background-color: black;
+}
+.bottom-footer p{
+  color:rgb(255, 255, 255);
+  text-align: center;
+  padding-bottom: 0%;
+}
+/* footer ends */
+/*section starts*/
+.top-section{
+  background-color: rgb(255, 255, 255);
+  color: #2c3e50;
+}
+/*section end*/
+/* section-3 start*/
+.oneClick{
+  background-color: rgb(165, 164, 164);
+
+}
+/* section-3 ends*/
+/* section-4 start*/
+.section4{
+  background: url(section4BG.jpg);
+margin: ;
+  color: white;
+}
+/* section-4 ends*/
+/* section-5 start*/
+.newsletter{
+  background-color: rgb(255, 255, 255);
+}
+.newsletter .form-control{
+  height: 50px;
+  border-color: black;
+  border-width: 3px;
+  border-style: outset;
+  border-radius: 20px 0 0 20px;
+}
+.newsletter .btn{
+  min-height: 50px;
+  border-radius: 0 20px 20px 0;
+  background: rgb(37, 35, 56);
+  color: white;
+}
+/* section-5 ends*/
