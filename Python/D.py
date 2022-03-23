@@ -38,7 +38,3 @@ for i in file_in_doc:
 
 
 #at last
-offset = 
-for i in file_to_be:
-    offset = 
-    output_files.append([i[0],])

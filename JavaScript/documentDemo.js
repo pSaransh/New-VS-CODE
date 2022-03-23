@@ -34,7 +34,7 @@ const dos = () => {
     console.log("I am lazy...");
   }, 3000);
   console.log("I am Two.");
-};
+};  
 const tres = () => {
   console.log("I am Three.");
 };
