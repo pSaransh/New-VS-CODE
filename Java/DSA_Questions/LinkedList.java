@@ -1,9 +1,12 @@
-package DSA_Questions;
+class Node{
+    int data;
+    Node next;
+}
 // import java.util.*;
 public class LinkedList {
-    Node headNode;
+    Node headNode = null;
     public Node addNode(int data){
-        Node newNode = new Node(data);
+        Node newNode = new Node();
         if(headNode==null){
             headNode = newNode;
             headNode.next=null;
@@ -18,7 +21,7 @@ public class LinkedList {
         }
         return headNode;
     }
-    public Node addNode(int data,int position){
+    /*public Node addNode(int data,int position){
         Node newNode = new Node(data);
         int positionCount=0;
         if(headNode==null){
@@ -35,6 +38,23 @@ public class LinkedList {
             travellingNode.next = null;
         }
         return headNode;
+    }*/
+    public void traverse(){
+        if(headNode==null) return;
+        else{
+            Node ptr = headNode;
+            //ptr = headNode;
+            while(ptr.next != null){
+                System.out.print(ptr.data+" ");
+                ptr = ptr.next;
+            }
+        }
     }
-    
+    public static void main(String[] args) {
+        LinkedList add = new LinkedList();
+        for (int i = 0; i < 10 ; i++) {
+            add.addNode(i);
+        }
+        add.traverse();
+    }
 }

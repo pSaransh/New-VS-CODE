@@ -1,0 +1,22 @@
+body{
+    background: hsl(220, 15%, 24%);
+    /*display: flex;
+    justify-items: center;
+    align-items: center;
+    outline: none;*/ 
+}
+#root {
+    color:rgb(247, 247, 247);
+}
+.button{
+    background-color: rgb(9, 151, 28);
+    border: none;
+    color: #fff;
+    padding: 15px 30px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    cursor:pointer;
+    border-radius: 12px;
+    margin: 10px 10px 20px 20px;
+}
