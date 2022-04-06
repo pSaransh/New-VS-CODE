@@ -35,6 +35,9 @@ const App = () => {
       return toast("Already filled", {type:"error"});
 
     checkIsWinner();
+if(!itemArray.include("empty")){
+reloadGame();
+}
   }
   return (
     <Container className='p-5'>
